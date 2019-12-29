@@ -9,12 +9,12 @@
 
 ## 前台页面展示
 
-![首页]('doc/image/首页.png')
+![首页](doc/image/首页.png)
 
-![文章]('doc/image/文章.png')
+![文章](doc/image/文章.png)
 
-![文章详细]('doc/image/文章详细.png')
+![文章详细](doc/image/文章详细.png)
 
-![标签]('doc/image/标签.png')
+![标签](doc/image/标签.png)
 
 
