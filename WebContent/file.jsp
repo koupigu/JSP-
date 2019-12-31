@@ -4,19 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<title>文件上传</title>
+<title>文件管理</title>
 </head>
-<style>
-	body{
-		
-	}
-</style>
 <body>
+
 	<div>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   		<a class="navbar-brand" href="/blog-jsp/file">文件后台管理</a>
@@ -46,27 +42,29 @@
                 <br>
                 <h3>注意:</h3>
                 <p>现在只能上传图片，其他格式文件还未编写</p>
-             </div>
-             
+            </div>
+
             <div class="col-10">
-            	<br>
-				<h3>文件上传</h3>
-				<br>
-				<form action="/blog-jsp/upload" method="post" enctype="multipart/form-data">
-					<input type="file" name="file">
-					<input type="text" name="name" placeholder="自定义文件名字">
-					<input class="btn btn-success" type="submit" value="上传文件">
-				</form>
-				<br>
-				<br>
-				<div>
-					<c:if test = "${url != null}">
-						<p>图片地址：<a href="${url}">${url}</a></p>
-						<img src="${url}" style="width: 30%;height: 30%;">
-					</c:if>
-				</div>
-			</div>
-    	</div>
+                <div>
+                <c:forEach items="${files}" var="file">
+                <div style="float: left;margin-right: 20px;margin-top: 20px;">
+                    <div class="card" style="width: 18rem;">
+                        <img src="${file.getUrl()}" class="card-img-top" style="height: 160px" alt="...">
+                        <div class="card-body">
+                        	<h5 class="card-title">${file.getName() }</h5>
+                            <!-- <p class="card-text">你的名字系列</p> -->
+                            <a href="/blog-jsp/download?url=${file.getUrl()}" class="btn btn-primary btn-sm">下载</a>
+                            <a href="${file.getUrl()}" class="btn btn-primary btn-sm">预览</a>
+                            <a href="/blog-jsp/delete?url=${file.getUrl()}" class="btn btn-primary btn-sm">删除</a>
+                            
+                        </div>
+                    </div>
+                 </div>
+             	</c:forEach>
+             	
+            </div>
+		</div>
+    </div>
    </div>
 
 </body>
