@@ -17,7 +17,7 @@ import util.UploadFileUtil;
 /**
  * 文件上传
  * */
-@WebServlet("/upload")
+@WebServlet("/admin/upload")
 @MultipartConfig
 public class UploadServlet extends HttpServlet{
 	
@@ -32,7 +32,6 @@ public class UploadServlet extends HttpServlet{
 		Part part = req.getPart("file");
 		String url = UploadFileUtil.Upload(part);
 		String name = req.getParameter("name");
-		System.out.println(name);
 		if ("".equals(name)) {
 			name = url.substring(url.lastIndexOf("/")+1,url.length());
 		}
@@ -42,7 +41,7 @@ public class UploadServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		req.setAttribute("url",url);
-		req.getRequestDispatcher("uploadFile.jsp").forward(req,resp);
+		req.getRequestDispatcher("./uploadFile.jsp").forward(req,resp);
 		//resp.sendRedirect();
 	}
 }

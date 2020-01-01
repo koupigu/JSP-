@@ -28,7 +28,7 @@ public class DeleteFileServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("/blog-jsp/file");
+		response.sendRedirect("/blog-jsp/admin/file");
 	}
 
 

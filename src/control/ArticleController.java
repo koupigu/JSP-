@@ -34,7 +34,6 @@ public class ArticleController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String kind = req.getParameter("kind");
 		String page = req.getParameter("page");
-		System.out.println(kind+"======"+page);
 		
 		List<Article> articles = new ArrayList<Article>();
 		int indexPage = 1;
@@ -45,7 +44,6 @@ public class ArticleController extends HttpServlet{
 				kind = "";
 				articles = articleDao.ArticleClassify(begin, 10);
 				int count = articleDao.count();
-				System.out.println(count);
 				totalPages = (int) PageUtil.getKindOfCategorySize(count);
 			} catch (SQLException e) {
 				e.printStackTrace();

@@ -57,4 +57,11 @@ public class ArticleDao {
     	Object[] params = {article.getA_page_view()+1,id};
     	JDBCUtil.executeUpdate(sql, params);
     }
+    
+    public void deleteById(String id) throws SQLException {
+    	String sql = "delete from  article where a_id =  ?";
+    	Object[] params = {id};
+    	JDBCUtil.executeUpdate(sql, params);
+	}
+    
 }

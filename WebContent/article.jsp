@@ -46,10 +46,10 @@
                 <div class="col-6">
                     <!-- 分类 -->
                     <div>
-                        <div class="commonHeadLabel mt20">
-                        		<span class="title mr20">
+                        <div>
+                        	<span class="title mr20">
                         			<a href="/blog-jsp/article">全部</a>
-                            	</span>
+                            </span>
                         	<c:forEach items="${categories}" var="category">
                         		<span class="title mr20">
                         			<a href="/blog-jsp/article?kind=${category.getC_id()}">${category.getC_name()}</a>
@@ -125,7 +125,7 @@
                     </div>
                     </div>
                 </div>
-                <div class="col-2">.col-md-2</div>
+                <div class="col-2"></div>
                 <!-- 标签 -->
                 <div class="col-4">
                     <h3># 热门标签</h3>

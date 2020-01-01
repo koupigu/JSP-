@@ -44,7 +44,7 @@ public class LabelDao {
 	}
     
     /**
-     * 获取标签总数
+     * 根据id查找tag
      * @throws SQLException 
      * */
     public Tag getTagById(long id) throws SQLException {
@@ -54,4 +54,66 @@ public class LabelDao {
     	Tag object = tag.get(0);
     	return object;
 	}
+    
+    /**
+     * 获取标签总数
+     * */
+    public int count() {
+    	String sql = "select * from tag";
+		Object[] params = null;
+		List<Tag> tags = null;
+		try {
+			tags = JDBCUtil.excuteQuery(sql, params, Article.class);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tags.size();
+	}
+    
+    /**
+     * 标签分页
+     * */
+    public List<Tag> limiTags(int begin,int size) {
+    	String sql = "select * from tag limit ?,?";
+    	Object[] params = {begin,size};
+    	List<Tag> tags = null;
+		try {
+			tags = JDBCUtil.excuteQuery(sql, params, Tag.class);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return tags;
+    }
+    
+    /**
+     * 根据id删除标签
+     * */
+    public void deleteTagById(String id) {
+    	String sql = "delete from  tag where T_id =  ?";
+    	Object[] params= {id};
+    	try {
+			JDBCUtil.executeUpdate(sql, params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+    
+    /**
+     * 修改标签
+     * */
+    public void changeNameById(String name,String id) {
+    	String sql = "update tag set t_name=?  where  t_id = ?";
+    	Object[] params = {name,id};
+    	
+    	try {
+			JDBCUtil.executeUpdate(sql, params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
 }

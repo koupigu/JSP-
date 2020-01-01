@@ -14,7 +14,7 @@ import dao.FileDao;
 import pojo.File;
 
 
-@WebServlet("/file")
+@WebServlet("/admin/file")
 public class FileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,7 +32,7 @@ public class FileController extends HttpServlet {
 		
 		request.setAttribute("files", files);
 		
-		request.getRequestDispatcher("file.jsp").forward(request, response);
+		request.getRequestDispatcher("./file.jsp").forward(request, response);
 	}
 
 }
