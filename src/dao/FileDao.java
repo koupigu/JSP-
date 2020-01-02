@@ -10,6 +10,7 @@ public class FileDao {
 	
 	/**
 	 * 获取全部文件
+	 * @author 舒宗梅
 	 * */
 	public List<File> getAllFile() throws SQLException {
 		String sql = "select * from file";

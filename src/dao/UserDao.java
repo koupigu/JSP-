@@ -14,6 +14,7 @@ public class UserDao {
 	
 	/**
 	 * 验证 登录
+	 * @author 舒宗梅
 	 * */
 	public boolean isTrue(String name,String password) {
 		String sql = "select * from user where u_name = ? and u_password = ?";

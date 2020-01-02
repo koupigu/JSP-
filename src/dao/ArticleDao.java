@@ -64,4 +64,16 @@ public class ArticleDao {
     	JDBCUtil.executeUpdate(sql, params);
 	}
     
+    /**
+     * 添加文章
+     * */
+    public void addArticle(String title,String content,String preview,long categoryId) {
+    	String sql = "insert into article(a_title,a_context,a_preview_text,a_category_id,a_diff,a_user_id) value(?,?,?,?,?,?)";
+    	Object[] params= {title,content,preview,categoryId,1,2019824};
+    	try {
+			JDBCUtil.executeUpdate(sql, params);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
 }

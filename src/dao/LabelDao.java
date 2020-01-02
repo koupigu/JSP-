@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 标签dao
- * @author 蒋超辉
+ * @author 舒宗梅
  * */
 public class LabelDao {
 	
@@ -116,4 +116,33 @@ public class LabelDao {
 		}
     }
     
+    /**
+     * 添加标签
+     * */
+    public void addTag(String tag) {
+    	
+    	String sql = "insert into tag(t_name) values(?)";
+    	Object[] params= {tag};
+    	try {
+			JDBCUtil.executeUpdate(sql, params);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    public boolean isHas(String name) {
+    	String sql = "select * from tag where c_name= ?";
+    	Object[] params = {name};
+    	try {
+			List list = JDBCUtil.excuteQuery(sql, params, Tag.class);
+			if (list.size() > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return false;
+    }
 }

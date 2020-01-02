@@ -13,7 +13,7 @@
 		vertical-align : top;
 		margin : 0;
 		margin-top : 10%;
-		background:url('img/background5.jpg') no-repeat center center;
+		background:url('img/background.jpg')  no-repeat ;
 		background-size:cover;
 	}
 </style>

@@ -59,7 +59,7 @@
 			<div class="col-2">
          <br>
         <ul>
-           <li><a href="/blog-jsp/admin/editor.jsp">编写文章</a></li>
+           <li><a href="/blog-jsp/admin/articlePage">编写文章</a></li>
            <li><a href="/blog-jsp/admin/article">文章列表</a></li>
            <li><a href="/blog-jsp/admin/about">about页面</a></li>
          </ul>

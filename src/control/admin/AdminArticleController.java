@@ -55,12 +55,7 @@ public class AdminArticleController extends HttpServlet {
 			}
 		}
 		List<Category> categories = null;
-		try {
-			categories = classifyDao.FindAllClass();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		categories = classifyDao.FindAllClass();
 		
 		if (page != null) {
 			indexPage = Integer.parseInt(page);

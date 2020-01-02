@@ -7,6 +7,10 @@ import jdbc.instantiation.JDBCUtil;
 import pojo.About;
 
 public class AboutDao {
+	/**
+	 * aboutdao
+	 * @author 蒋超辉
+	 * */
 
 	
 	public void save(String content) {
@@ -20,7 +24,7 @@ public class AboutDao {
 			e.printStackTrace();
 		}
 	}
-	
+	//获取about页面
 	public About getAbout() {
 		String sql = "SELECT * from about ORDER BY time DESC LIMIT 1";
 		Object[] params=null;

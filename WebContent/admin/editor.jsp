@@ -58,34 +58,35 @@
 			<div class="col-2">
          <br>
           <ul>
-           <li><a href="/blog-jsp/admin/editor.jsp">编写文章</a></li>
+           <li><a href="/blog-jsp/admin/articlePage">编写文章</a></li>
            <li><a href="/blog-jsp/admin/article">文章列表</a></li>
            <li><a href="/blog-jsp/admin/about">about页面</a></li>
          </ul>
+         <br><br>
+         <p>注意:标签之间用#隔开</p>
       </div>
 
       <div class="col-9">
           <br>
-        <form action="">
+        <form action="/blog-jsp/admin/article/add" method="post">
           <div class="row">
             <div class="col-4">
               <label>文章标题</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" name="title">
             </div>
 
             <div class="col-4">
               <label>标签</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" name="tags">
             </div>
 
             <div class="col-2">
               <label>分类</label>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control" name="category">
+              	<c:forEach items="${categories}" var="category">
+              	 <option>${category.getC_name()}</option>
+              	</c:forEach>
+                
               </select>
             </div>
             <div class="col-2">
@@ -95,7 +96,7 @@
           </div>
           <br>
           <div id="test-editor">
-            <textarea style="display:none;"></textarea>
+            <textarea style="display:none;" name="content"></textarea>
           </div>
         </form>
       </div>

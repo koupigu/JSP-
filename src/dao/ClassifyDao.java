@@ -14,10 +14,16 @@ import java.util.List;
 public class ClassifyDao {
     //分类
     //查询所有分类
-    public List<Category> FindAllClass() throws SQLException {
+    public List<Category> FindAllClass() {
         String sql="select * from category";
         Object[] params = null;
-        List<Category> category = JDBCUtil.excuteQuery(sql, params, Category.class);
+        List<Category> category = null;
+		try {
+			category = JDBCUtil.excuteQuery(sql, params, Category.class);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return category;
     }
 
@@ -90,5 +96,19 @@ public class ClassifyDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
+    
+    public Long getIdByName(String name) {
+    	String sql= "select * FROM category where c_name = ?";
+    	Object[] params= {name};
+    	List<Category> category = null;
+    	try {
+    		category=JDBCUtil.excuteQuery(sql, params, Category.class);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	System.out.println(category.get(0));
+    	return category.get(0).getC_id();
     }
 }

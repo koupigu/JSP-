@@ -12,7 +12,9 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+	
+	<link rel="stylesheet" href="/blog-jsp/admin/editormd/css/editormd.preview.css" />
+    
     <title>${article.getA_title()}</title>
 </head>
 <body>
@@ -55,7 +57,14 @@
                </p> 
             </div>
             <br>
+            <c:if test = "${article.getA_diff()== 1}">
+            	<div id="test-markdown-view">
+				    <textarea style="display:none;">${article.getA_context()}</textarea>             
+				</div>
+            </c:if>
+            <c:if test = "${article.getA_diff()!= 1}">
             <p>${article.getA_context()}</p>
+            </c:if>
 			</div>
 			<div class="col-2"></div>
 			<div class="col-4">
@@ -73,4 +82,17 @@
 		</div>
 	</div>
 </body>
+
+<script src="/blog-jsp/admin/editormd/editormd.js"></script>
+<script src="/blog-jsp/admin/editormd/lib/marked.min.js"></script>
+<script src="/blog-jsp/admin/editormd/lib/prettify.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var testView = editormd.markdownToHTML("test-markdown-view", {
+		// markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
+		// htmlDecode : true,  // Enable / disable HTML tag encode.
+		// htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+		});
+	});
+</script>
 </html>
