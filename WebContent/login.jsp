@@ -35,19 +35,24 @@
          <div class="logo"><br>
          <p style="text-align:center"><font face="Bradley Hand ITC" size="50" color="#87CEEB">welcome</font></p>
          </div> <center>
-        <form class="form-horizontal">
-         <div class="form-item">
-             <input id="username" type="text" color="#000999"autocomplete="off" name="username" placeholder="账号";>
-         </div>
-         <div class="form-item">
-             <input id="password" type="password" autocomplete="off" name="password" placeholder="密码">
-         </div>
-         <div class="form-item"><button id="submit" class="btn btn-success">登 录</button></div>
+        <form action="/blog-jsp/login" method="post" class="form-horizontal">
+        	 <h3>${msg }</h3>
+	         <div class="form-item">
+	             <input id="username" type="text" color="#000999"autocomplete="off" name="name" placeholder="账号";>
+	         </div>
+	         <div class="form-item">
+	             <input id="password" type="password" autocomplete="off" name="password" placeholder="密码">
+	         </div>
+	         
+         	<div class="form-item">
+         		<button id="submit" class="btn btn-success">登 录</button>
+         	</div>
+         	
          <div class="reg-bar">
              <a class="reg" href="register.jsp">立即注册</a>
-          </div>
+         </div>
  	 </div>
- 	 <div class="form-group">
+ 	 			<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-6">
 					</div>
 				</div>

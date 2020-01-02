@@ -64,7 +64,7 @@
 	      </li>
 	    </ul>
 	    
-	    <button class="btn btn-outline-success my-2 my-sm-0"><a href="#">登录</a></button>
+	    <button class="btn btn-outline-success my-2 my-sm-0"><a href="login.jsp">登录</a></button>
 	  </div>
 	</nav>
 
