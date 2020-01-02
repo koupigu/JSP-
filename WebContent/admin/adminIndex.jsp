@@ -10,8 +10,7 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-<title>标签管理</title>
+<title>后台首页</title>
 </head>
 <body>
 
@@ -43,6 +42,7 @@
 	        <a class="nav-link" href="/blog-jsp/admin/tag">标签管理</a>
 	      </li>
 	    </ul>
+	    
 	    <ul class="navbar-nav mr-auto">
 		    <li class="nav-item">
 		    	<a class="nav-link" href="/blog-jsp/index">前台页面</a>
@@ -53,24 +53,26 @@
 	</div>
 	
 	<div class="container-fluid">
-	<div class="row">
-	  <div class="col-2">
+		<div class="row">
+			<div class="col-2">
          <br>
-         <ul>
-
-         </ul>
       </div>
 
       <div class="col-9">
         <br>
-        <h3>首页</h3>
+        <div class="jumbotron">
+		  <h1>Hello, world!</h1>
+		  <br>
+		  <h5>欢迎访问17级计科五班 如来佛祖小组 实训作业-个人博客系统后台管理</h5>
+		  <br><br>
+		  <p><a class="btn btn-primary btn-lg" href="/blog-jsp/index" role="button">访问前台</a></p>
+		</div>
       </div>
 
       <div class="col-1"></div>
 		</div>
-	</div>
-
+		
+    </div>
 
 </body>
-
 </html>

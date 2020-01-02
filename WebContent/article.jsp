@@ -52,7 +52,9 @@
                             </span>
                         	<c:forEach items="${categories}" var="category">
                         		<span class="title mr20">
-                        			<a href="/blog-jsp/article?kind=${category.getC_id()}">${category.getC_name()}</a>
+                        			<a href="/blog-jsp/article?kind=${category.getC_id()}" class="text-primary" style="font-size: 24px;">
+                        			#${category.getC_name()}
+                        			</a>
                             	</span>
                         	</c:forEach>
                         </div>

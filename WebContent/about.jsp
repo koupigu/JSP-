@@ -41,9 +41,10 @@
 	</nav>      
 	</div>
 	
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-6">
+			<div class="col-2"></div>
+			<div class="col-8">
 				<br>
 				<div id="test-markdown-view">
 				    <textarea style="display:none;">${about.getContent()}</textarea>             
